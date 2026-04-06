@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrições - EduTech</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #d8bfd8; 
+            font-family: 'Unbounded', sans-serif;
+            padding: 40px;
+            margin: 0;
+            text-align: center;
+            position: relative; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-weight: 700;
+            color: #5e2a84;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 35px;
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+            border: none;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 400;
+            color: #4a1e63;
+        }
+
+        input, select, textarea {
+            font-family: 'Unbounded', sans-serif;
+            padding: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid #fff;
+            margin-top: 5px;
+            outline: none;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .flex-1 { flex: 1; }
+
+        .button-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .button {
+            position: relative;
+            display: inline-block;
+        }
+
+        .button a {
+            color: white;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #8d43d3; 
+            display: block;
+            position: relative;
+            padding: 15px 45px;
+            box-shadow: inset 0 1px 0 #bc8cf2, 0 8px 0 #621599; 
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .button a:active {
+            top: 6px;
+            box-shadow: inset 0 1px 0 #bc8cf2, inset 0 -3px 0 #4b0082;
+        }
+
+        .bicho-fofo {
+            position: absolute;
+            top: 10%;
+            right: 6%;
+            width: 230px;
+            height: auto;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="img.html/roxo.png" alt="Mascote Roxo" class="bicho-fofo">
+
+    <h1>Inscrição de Candidato</h1>
+
+    <form id="inscricaoForm" action="#" method="post" enctype="multipart/form-data">
+        
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <div class="row">
+            <div class="flex-1">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required>
+            </div>
+            <div class="flex-1">
+                <label for="nascimento">Data de Nascimento:</label>
+                <input type="date" id="nascimento" name="nascimento" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="flex: 2;">
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" required>
+            </div>
+            <div class="flex-1">
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="flex-1">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+            </div>
+            <div style="width: 80px;">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" maxlength="2" required>
+            </div>
+        </div>
+
+        <label for="curso">Curso Desejado:</label>
+        <select id="curso" name="curso" required>
+            <option value="ti">Técnico em Informática</option>
+            <option value="adm">Técnico em Administração</option>
+            <option value="mkt">Técnico em Marketing</option>
+            <option value="rh">Técnico em Recursos Humanos</option>
+        </select>
+
+        <label>Turno:</label>
+        <div style="margin-top: 5px;">
+            <input type="radio" name="turno" value="manha" style="width:auto;"> Manhã
+            <input type="radio" name="turno" value="tarde" style="width:auto; margin-left: 10px;"> Tarde
+            <input type="radio" name="turno" value="noite" style="width:auto; margin-left: 10px;"> Noite
+        </div>
+
+        <label>Já possui experiência na área?</label>
+        <div style="margin-top: 5px;">
+            <input type="radio" name="exp" value="sim" style="width:auto;"> Sim
+            <input type="radio" name="exp" value="nao" style="width:auto; margin-left: 10px;"> Não
+        </div>
+
+        <label>Áreas de Interesse:</label>
+        <div style="margin-top: 5px; display: grid; grid-template-columns: 1fr 1fr;">
+            <span><input type="checkbox" name="int" value="1" style="width:auto;"> Programação</span>
+            <span><input type="checkbox" name="int" value="2" style="width:auto;"> Negócios</span>
+            <span><input type="checkbox" name="int" value="3" style="width:auto;"> Design</span>
+            <span><input type="checkbox" name="int" value="4" style="width:auto;"> Suporte</span>
+        </div>
+
+        <label for="doc">Upload de documento (RG ou CPF):</label>
+        <input type="file" id="doc" name="doc">
+
+        <label for="obs">Observações:</label>
+        <textarea id="obs" name="obs"></textarea>
+
+        <div class="button-container">
+            <div class="button">
+                <a href="#" onclick="document.getElementById('inscricaoForm').submit(); return false;">Enviar Inscrição</a>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
