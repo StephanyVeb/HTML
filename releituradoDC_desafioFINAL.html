@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar uma Conta - Simulador</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #313338;
+            font-family: 'Unbounded', sans-serif;
+            padding: 40px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .logo-central {
+            width: 120px;
+            height: auto;
+            display: block;
+        }
+
+        form {
+            width: 100%;
+            max-width: 450px;
+            background: #313338;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #b5bac1;
+            text-transform: uppercase;
+        }
+
+        input {
+            font-family: 'Unbounded', sans-serif;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: none;
+            margin-top: 8px;
+            background-color: #1e1f22;
+            color: white;
+            outline: none;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .button {
+            position: relative;
+            display: block;
+        }
+
+        .button a {
+            color: white;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #5865f2;
+            display: block;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 0 #3c45a5;
+        }
+
+        .button a:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #3c45a5;
+        }
+
+        .checkbox-area {
+            margin-top: 20px;
+            color: #b5bac1;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-area input {
+            width: auto;
+            margin: 0;
+        }
+
+        .footer-text {
+            color: #b5bac1;
+            font-size: 11px;
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="img.html/finalboss.png" alt="Logo" class="logo-central">
+    </div>
+
+    <form id="simuladorForm">
+        <h1>Criar uma conta</h1>
+        
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="nome">Nome de exibição</label>
+        <input type="text" id="nome" name="nome">
+
+        <label for="usuario">Nome de usuário</label>
+        <input type="text" id="usuario" name="usuario" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <label for="nascimento">Data de Nascimento</label>
+        <input type="date" id="nascimento" name="nascimento" required>
+
+        <div class="checkbox-area">
+            <input type="checkbox" id="news">
+            <label for="news" style="text-transform: none; margin: 0;">Eu aceito receber novidades por e-mail.</label>
+        </div>
+
+        <div class="button-container">
+            <div class="button">
+                <a href="#" onclick="alert('Cadastro enviado!'); return false;">Continuar</a>
+            </div>
+        </div>
+
+        <p class="footer-text">
+            Ao se registrar, você concorda com os Termos de Serviço e a Política de Privacidade.
+        </p>
+    </form>
+
+</body>
+</html>
