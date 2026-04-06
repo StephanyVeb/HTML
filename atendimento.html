@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento Online - TechHelp</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #fceea7; /* Fundo amarelo pastel */
+            font-family: 'Unbounded', sans-serif;
+            padding: 40px;
+            margin: 0;
+            text-align: center;
+            position: relative; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-weight: 700;
+            color: #d4a017;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        form {
+            max-width: 550px;
+            margin: 0 auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+            /* Borda removida conforme pedido */
+            border: none; 
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 400;
+            color: #6d5a1a;
+        }
+
+        input, select, textarea {
+            font-family: 'Unbounded', sans-serif;
+            padding: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid #fff;
+            margin-top: 5px;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .button-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .button {
+            position: relative;
+            display: inline-block;
+        }
+
+        .button a {
+            color: #b8810b;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #fde25a;
+            display: block;
+            position: relative;
+            padding: 15px 40px;
+            box-shadow: inset 0 1px 0 #fff2b2, 0 8px 0 #e6c939; 
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .button a:active {
+            top: 6px;
+            box-shadow: inset 0 1px 0 #fff2b2, inset 0 -3px 0 #ccab00;
+        }
+
+        .bicho-fofo {
+           position: absolute;
+            top: 35%;
+            right: 6%;
+            width: 300px;
+            height: auto;
+            z-index: 1;
+            transform: translateY(-50%) rotate(15deg)
+        }
+    </style>
+</head>
+<body>
+    <img src="img.html/amarelo.png" alt="Personagem Amarelo" class="bicho-fofo">
+
+    <h1>Atendimento ao Cliente</h1>
+
+    <form id="atendimentoForm" action="#" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <div style="flex: 1;">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div style="flex: 1;">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+            </div>
+        </div>
+
+        <div>
+            <label for="tipo">Tipo de Atendimento:</label>
+            <select id="tipo" name="tipo">
+                <option value="duvida">Dúvida</option>
+                <option value="reclamacao">Reclamação</option>
+                <option value="sugestao">Sugestão</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Prioridade:</label>
+            <div style="margin-top: 8px;">
+                <input type="radio" id="baixa" name="prioridade" value="baixa" style="width: auto;"> <span style="color:#6d5a1a">Baixa</span>
+                <input type="radio" id="media" name="prioridade" value="media" style="width: auto; margin-left: 15px;"> <span style="color:#6d5a1a">Média</span>
+                <input type="radio" id="alta" name="prioridade" value="alta" style="width: auto; margin-left: 15px;"> <span style="color:#6d5a1a">Alta</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="descricao">Descrição Detalhada:</label>
+            <textarea id="descricao" name="descricao" placeholder="Como podemos te ajudar?"></textarea>
+        </div>
+
+        <div>
+            <label for="arquivo">Anexar arquivo:</label>
+            <input type="file" id="arquivo" name="arquivo" style="background: white; cursor: pointer;">
+        </div>
+
+        <div style="margin-top: 20px;">
+            <input type="checkbox" id="contato" name="contato" style="width: auto;">
+            <label for="contato" style="display: inline;">Autorizo o contato para retorno</label>
+        </div>
+
+        <div class="button-container">
+            <div class="button">
+                <a href="#" onclick="document.getElementById('atendimentoForm').submit(); return false;">Enviar Solicitação</a>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
